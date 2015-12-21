@@ -1,0 +1,12 @@
+{
+	"DB_HOST":"192.168.8.200",
+	"DB_USER":"yixiang",
+	"DB_PASSWORD":"123456",
+	"DB_NAME":"db_tongbing360",
+
+	"ETCD_HOST":"127.0.0.1",
+	"ETCD_PORT":"4001",
+	"RPOVIDER_HOST":"127.0.0.1",
+	"PROVIDER_PORT":"5004",
+	"ss":{"yy":{"db":"888888888888888888888"}}
+}
