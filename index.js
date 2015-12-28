@@ -4,28 +4,29 @@
 var path = require('path');
 var fs = require('fs');
 var config = require('config')();
+var fn = require('fn.js');
+var Promise = require('bluebird');
 
 function DbNode(sql) {
   var dbnode = {};
-
   dbnode.sql = sql || 'mysql2';
   
-  dbnode.Config = function(conf) {
+  dbnode.config = function(conf) {
     this.configPath = conf;
     return this;
   };
-  dbnode.Entities = function(path) {
+  dbnode.table = function(path) {
     this.entitiesPath = path;
     return this;
   };
-  dbnode.Debug = function(debug) {
+  dbnode.debug = function(debug) {
     this.debug = debug;
     return this;
   };
 
   dbnode.connect = function() {
     var db = {
-      VERSION: '0.8.1',
+      VERSION: '0.1.1',
       TYPE: this.sql
     };
     
@@ -72,7 +73,17 @@ function DbNode(sql) {
     Object.keys(models).forEach(function(tab) {
       db[tab] = models[tab];
     });
-    db.query = bookshelf.knex.raw;
+    
+    db.rawquery= bookshelf.knex.raw;
+    db.query = function(){
+		var args = fn.toArray( arguments );
+		return  new Promise(function (resolve, reject){			
+			bookshelf.knex.raw.apply(bookshelf.knex,args).then(function(resp){
+				resolve(resp[0]);
+			}); 
+		});		   
+	};
+	
     return db;
   };
 

@@ -12,15 +12,17 @@
   },
   "license": "ISC",
   "dependencies": {
+    "bluebird": "^3.1.1",
     "bookshelf": "^0.8.2",
+    "fn.js": "^0.8.1",
     "knex": "^0.8.6",
     "mysql": "^2.9.0",
     "mysql2": "^0.15.8"
   },
   "gitHead": "760fba6d75637d116bdf4d1f60743c447eca3291",
   "readme": "ERROR: No README data found!",
-  "_id": "node-db@1.0.0",
-  "_shasum": "b3df353a58f0b3ae69febedb8cc504327a4f7f93",
-  "_from": "git+https://github.com/kerrer/node-db.git",
-  "_resolved": "git+https://github.com/kerrer/node-db.git#760fba6d75637d116bdf4d1f60743c447eca3291"
+  "_id": "db@1.0.0",
+  "_shasum": "14e7dcd3640ce5455bfdaf6ebde15d20c142cfe3",
+  "_from": "kerrer/nodejs-db",
+  "_resolved": "git://github.com/kerrer/nodejs-db.git#a6c64cd1d6cbfcd31319459f14543867cf1ff254"
 }
