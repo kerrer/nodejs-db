@@ -1,6 +1,6 @@
 {
-	"DB_HOST":"192.168.8.200",
-	"DB_USER":"yixiang",
+	"DB_HOST":"127.0.0.1",
+	"DB_USER":"root",
 	"DB_PASSWORD":"123456",
-	"DB_NAME":"db_base_data"
+	"DB_NAME":"qihuiyihao_v2"
 }
